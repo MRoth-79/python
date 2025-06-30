@@ -1,1 +1,1 @@
-pyhton maor
+python maor
