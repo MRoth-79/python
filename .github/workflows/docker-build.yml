@@ -11,19 +11,19 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
-          username: berezovsky8
+          username: MRoth-79
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
         run: docker build -t berezovsky8/devops-app:latest .
 
       - name: Push Docker Image to Docker Hub
-        run: docker push berezovsky8/devops-app:latest
+        run: docker push MRoth-79/devops-app:latest
 
       - name: Run the container
-        run: docker run -d --name devops-python-app-container berezovsky8/devops-app:latest
+        run: docker run -d --name devops-python-app-container MRoth-79/devops-app:latest
