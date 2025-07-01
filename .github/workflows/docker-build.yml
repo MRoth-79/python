@@ -23,7 +23,7 @@ jobs:
         run: docker build -t berezovsky8/devops-app:latest .
 
       - name: Push Docker Image to Docker Hub
-        run: docker push MRoth-79/devops-app:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/devops-app:latest
 
       - name: Run the container
         run: docker run -d --name devops-python-app-container MRoth-79/devops-app:latest
